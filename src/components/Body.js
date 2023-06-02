@@ -2,6 +2,7 @@ import React from "react";
 import SideBar from "./SideBar";
 import MainContainer from "./MainContainer";
 import { Outlet, createBrowserRouter } from "react-router-dom";
+import WatchVideoContainer from "./WatchVideoContainer";
 import WatchVideo from "./WatchVideo";
 
 const BodyLayout = () => {

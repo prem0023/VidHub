@@ -4,7 +4,7 @@ const Video = ({ videData }) => {
   const { snippet, statistics } = videData;
 
   return (
-    <div className="flex flex-col w-[450px] hover:shadow-lg hover:bg-gray-200 p-3">
+    <div className="flex flex-col w-[450px] hover:shadow-lg hover:bg-gray-200 p-3 m-2">
       <Link to={"/watch?v=" + videData.id}>
         <img
           className="rounded-xl mb-7 w-full"

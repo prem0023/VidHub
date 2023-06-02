@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import Video from "./Video";
 import { YOUTUBE_VIDEO_API } from "../utils/constant";
+import ShimmerUI from "./ShimmerUI";
 
 const VideoContainer = () => {
-  const [videData, setVideoData] = useState([]);
+  const [videoData, setVideoData] = useState([]);
   useEffect(() => {
     getVideo();
   }, []);
@@ -14,9 +15,13 @@ const VideoContainer = () => {
     setVideoData(json.items);
   };
 
-  return (
-    <div className="flex flex-wrap justify-center my-5 space-x-3 space-y-3">
-      {videData.map((video) => {
+  return videoData.length == 0 ? (
+    <div className="flex flex-wrap justify-center my-5">
+      <ShimmerUI />
+    </div>
+  ) : (
+    <div className="flex flex-wrap justify-center my-5">
+      {videoData.map((video) => {
         return <Video videData={video} key={video.id} />;
       })}
     </div>
